@@ -24,15 +24,44 @@
 // [1, 2, 5, 0, 10, 34] => 34 10 0 5 2 1
 
 
-void printTurnArray( int [] array, int i)
-{
+// void printTurnArray( int [] array, int i)
+// {
     
-    if(i >= 0)
+//     if(i >= 0)
+//     {
+//         Console.Write(array[i] + " ");
+//         printTurnArray(array, i - 1);
+//     }
+// }
+// int[] array = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+// int i = 10;
+// printTurnArray(array, i);
+
+// Задача 2: Напишите программу вычисления функции
+// Аккермана с помощью рекурсии. Даны два
+// неотрицательных числа m и n. 
+// m = 2, n = 3 -> A(m,n) = 29
+
+int Ackermann(int m, int n)
     {
-        Console.Write(array[i] + " ");
-        printTurnArray(array, i - 1);
+        if (m == 0)
+        {
+            return n + 1;
+        }
+        else if (n == 0)
+        {
+            return Ackermann(m - 1, 1);
+        }
+        else
+        {
+            return Ackermann(m - 1, Ackermann(m, n - 1));
+        }
     }
-}
-int[] array = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-int i = 10;
-printTurnArray(array, i);
+
+   
+        int n = 2;
+        int m = 2;
+        int result = Ackermann(m, n);
+        Console.WriteLine("A({0}, {1}) = {2}", m, n, result);
+   
+
