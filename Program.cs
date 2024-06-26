@@ -6,12 +6,33 @@
 // M = 4; N = 8 -> "4, 5, 6, 7, 8"
 
 
-void oneToN(int n, int m)
+// void oneToN(int n, int m)
+// {
+//     if (n <= m)
+//     {
+//         Console.Write(n + " ");
+//         oneToN(n + 1, m);      
+//     }
+// }
+// oneToN(5, 10);
+
+
+
+// Задача 3: Задайте произвольный массив. Выведете
+// его элементы, начиная с конца. Использовать
+// рекурсию, не использовать циклы.
+// [1, 2, 5, 0, 10, 34] => 34 10 0 5 2 1
+
+
+void printTurnArray( int [] array, int i)
 {
-    if (n <= m)
+    
+    if(i >= 0)
     {
-        Console.Write(n + " ");
-        oneToN(n + 1, m);      
+        Console.Write(array[i] + " ");
+        printTurnArray(array, i - 1);
     }
 }
-oneToN(5, 10);
+int[] array = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int i = 10;
+printTurnArray(array, i);
