@@ -42,7 +42,7 @@
 // неотрицательных числа m и n. 
 // m = 2, n = 3 -> A(m,n) = 29
 
-int Ackermann(int m, int n)
+ulong Ackermann(ulong m, ulong n)
     {
         if (m == 0)
         {
@@ -59,9 +59,9 @@ int Ackermann(int m, int n)
     }
 
    
-        int n = 2;
-        int m = 2;
-        int result = Ackermann(m, n);
-        Console.WriteLine("A({0}, {1}) = {2}", m, n, result);
+        ulong n = 2;
+        ulong m = 4;
+        ulong result = Ackermann(m, n);
+        Console.WriteLine("A({0}, {1}) = {2}", n, m, result);
    
 
